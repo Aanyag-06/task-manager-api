@@ -1,35 +1,32 @@
-# Task Manager API 🚀
+# Task Manager API 
 
-A robust, fully containerized backend REST API built using **FastAPI**, **SQLAlchemy**, and **PostgreSQL**. This platform provides secure, production-grade endpoints for tracking users, tasks, projects, and collaborative teams.
+It is a fully containerized backend REST API built using FastAPI, *SQLAlchemy*, and *PostgreSQL*. 
 
-## 🌟 Features
-* **Authentication:** Secure user authentication using JWT (JSON Web Tokens) and OAuth2 password hashing.
-* **Task Tracking:** Full CRUD operations for creating, updating, assigning, and archiving project tasks.
-* **Project & Team Collaboration:** Relational mappings to group users into collaborative teams and projects.
-* **Production Deployment:** Completely containerized with Docker and live-hosted on Render.
+It secures user authentication, team collaboration, project grouping, and task management. The entire application is packaged cleanly inside Docker and is live on the cloud.
 
----
+##  Live Production URL
+* Swagger UI: **https://task-manager-api-ekuw.onrender.com/docs**
 
-## 🛠️ Tech Stack
-* **Backend:** FastAPI (Python 3.11)
-* **Database:** PostgreSQL
-* **ORM & Migrations:** SQLAlchemy & Alembic
-* **Containerization:** Docker & Docker Compose
-* **Hosting Platform:** Render
+## My Tech Stack
+* Framework: FastAPI (Python 3.11) 
+* Database: PostgreSQL 
+* ORM & Migrations: SQLAlchemy (Object-Relational Mapper) & Alembic 
+* Containerization: Docker & Docker Compose
+* Hosting Platform: Render 
 
----
+## Repository Structure
+Here is how I organized the files and directories in this project:
 
-## 🚀 Live Production URL
-The API documentation is live, interactive, and publicly accessible at:
-👉 **[https://task-manager-api-ekuw.onrender.com/docs](https://task-manager-api-ekuw.onrender.com/docs)**
-
----
-
-## 💻 Local Setup & Installation
-
-Follow these steps to run this project entirely inside Docker on your local machine.
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/Aanyag-06/task-manager-api.git](https://github.com/Aanyag-06/task-manager-api.git)
-cd task-manager-api
+├── app/
+│   ├── main.py            
+│   ├── core/             
+│   ├── models/           
+│   ├── routes/         
+│   ├── schemas/         
+│   └── auth/            
+├── alembic/            
+├── .dockerignore        
+├── .env.example          
+├── docker-compose.yml    
+├── Dockerfile            
+└── requirements.txt      
