@@ -7,5 +7,5 @@ class Project(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     description: Optional[str] = None
-    team_id: int = Field(foreign_key="team.id")  # Links project to a specific team
+    team_id: int = Field(foreign_key="teams.id")  # Links project to a specific team
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))

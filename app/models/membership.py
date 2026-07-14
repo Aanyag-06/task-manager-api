@@ -11,6 +11,6 @@ class Role(str, Enum):  # These are the only 4 allowed roles
 class TeamMembership(SQLModel, table=True):
     __tablename__= "team_memberships"
     id: Optional[int] = Field(default=None, primary_key=True)
-    user_id: int = Field(foreign_key="user.id")
-    team_id: int = Field(foreign_key="team.id")
+    user_id: int = Field(foreign_key="users.id")
+    team_id: int = Field(foreign_key="teams.id")
     role: Role = Role.member 

@@ -6,6 +6,6 @@ class ActivityLog(SQLModel, table=True):
     __tablename__= "activity_logs"
     id: Optional[int] = Field(default=None, primary_key=True)
     action: str  
-    user_id: int = Field(foreign_key="user.id")
-    team_id: int = Field(foreign_key="team.id")
+    user_id: int = Field(foreign_key="users.id")
+    team_id: int = Field(foreign_key="teams.id")
     default_factory=lambda: datetime.now(timezone.utc)
