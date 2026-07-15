@@ -2,7 +2,6 @@ import bcrypt
 
 def hash_password(password: str) -> str:
     # Converts a plain password string into a secure, random-salted hash
-    # example: "hello123" → b"$2b$12$randomscrambled..."
     pwd_bytes = password.encode('utf-8')
     salt = bcrypt.gensalt()
     hashed = bcrypt.hashpw(pwd_bytes, salt)
