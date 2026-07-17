@@ -5,7 +5,7 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: str
 
-# what you send back — NEVER include password in responses
+# what you send back 
 class UserResponse(BaseModel):
     id: int
     email: str

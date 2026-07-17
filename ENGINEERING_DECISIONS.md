@@ -46,7 +46,6 @@ The four roles work like this:
 
 ## 7. Tradeoffs
 * I chose JWT over session-based auth as it is simpler and statelessbut means tokens can't be instantly revoked before they expire.
-* I skipped Redis/caching to keep the project simple for this timeline
 
 ## 8. Future Improvements
 Some of the changes which I could've done:

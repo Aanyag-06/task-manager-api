@@ -12,7 +12,7 @@ from app.schemas.team import TeamCreate, InviteMember, ChangeRole, TeamResponse,
 router = APIRouter(prefix="/teams", tags=["Teams"])
 
 
-# ─── CREATE TEAM ───────────────────────────────────────────────
+# Create team
 @router.post("/", response_model=TeamResponse, status_code=201)
 def create_team(
     team_data: TeamCreate,
@@ -41,7 +41,7 @@ def create_team(
     return new_team
 
 
-# ─── GET MY TEAMS ──────────────────────────────────────────────
+# Get my team
 @router.get("/", response_model=list[TeamResponse])
 def get_my_teams(
     session: Session = Depends(get_session),
@@ -60,7 +60,7 @@ def get_my_teams(
     return teams
 
 
-# ─── GET ONE TEAM ──────────────────────────────────────────────
+# Get one team
 @router.get("/{team_id}", response_model=TeamResponse)
 def get_team(
     team_id: int,
@@ -73,7 +73,7 @@ def get_team(
     return team
 
 
-# ─── GET TEAM MEMBERS ──────────────────────────────────────────
+# Get team members
 @router.get("/{team_id}/members", response_model=list[MemberResponse])
 def get_members(
     team_id: int,
@@ -99,7 +99,7 @@ def get_members(
     return result
 
 
-# ─── INVITE MEMBER ─────────────────────────────────────────────
+# Invite members
 @router.post("/{team_id}/invite")
 def invite_member(
     team_id: int,
@@ -141,7 +141,7 @@ def invite_member(
     return {"message": f"{invited_user.email} added to team with role {invite_data.role}"}
 
 
-# ─── CHANGE ROLE ───────────────────────────────────────────────
+# Change Role
 @router.patch("/{team_id}/role")
 def change_member_role(
     team_id: int,
@@ -178,7 +178,7 @@ def change_member_role(
     return {"message": f"Role updated to {role_data.role} for {target_user.email}"}
 
 
-# ─── REMOVE MEMBER ─────────────────────────────────────────────
+# Remove Member
 @router.delete("/{team_id}/members/{user_id}")
 def remove_member(
     team_id: int,

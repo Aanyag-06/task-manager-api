@@ -11,7 +11,7 @@ from app.schemas.project import ProjectCreate, ProjectResponse
 router = APIRouter(prefix="/teams/{team_id}/projects", tags=["Projects"])
 
 
-# ─── CREATE PROJECT ────────────────────────────────────────────
+#Create project
 @router.post("/", response_model=ProjectResponse, status_code=201)
 def create_project(
     team_id: int,
@@ -32,7 +32,7 @@ def create_project(
     return project
 
 
-# ─── GET ALL PROJECTS IN A TEAM ────────────────────────────────
+# Get all projects in a team
 @router.get("/", response_model=list[ProjectResponse])
 def get_projects(
     team_id: int,
@@ -46,7 +46,7 @@ def get_projects(
     return projects
 
 
-# ─── GET ONE PROJECT ───────────────────────────────────────────
+#Get one project
 @router.get("/{project_id}", response_model=ProjectResponse)
 def get_project(
     team_id: int,
@@ -63,7 +63,7 @@ def get_project(
     return project
 
 
-# ─── UPDATE PROJECT ────────────────────────────────────────────
+# Update project
 @router.patch("/{project_id}", response_model=ProjectResponse)
 def update_project(
     team_id: int,
@@ -90,7 +90,7 @@ def update_project(
     return project
 
 
-# ─── DELETE PROJECT ────────────────────────────────────────────
+#Delete project
 @router.delete("/{project_id}")
 def delete_project(
     team_id: int,

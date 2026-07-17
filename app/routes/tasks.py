@@ -20,7 +20,7 @@ def get_project_or_404(project_id: int, team_id: int, session: Session) -> Proje
     return project
 
 
-# ─── CREATE TASK ───────────────────────────────────────────────
+# Create task
 @router.post("/", response_model=TaskResponse, status_code=201)
 def create_task(
     team_id: int,
@@ -54,7 +54,7 @@ def create_task(
     return task
 
 
-# ─── GET ALL TASKS ─────────────────────────────────────────────
+# Get All Tasks
 @router.get("/", response_model=list[TaskResponse])
 def get_tasks(
     team_id: int,
@@ -89,7 +89,7 @@ def get_tasks(
     return tasks
 
 
-# ─── GET ONE TASK ──────────────────────────────────────────────
+# Get one task
 @router.get("/{task_id}", response_model=TaskResponse)
 def get_task(
     team_id: int,
@@ -107,7 +107,7 @@ def get_task(
     return task
 
 
-# ─── UPDATE TASK ───────────────────────────────────────────────
+# Update task
 @router.patch("/{task_id}", response_model=TaskResponse)
 def update_task(
     team_id: int,
@@ -153,7 +153,7 @@ def update_task(
     return task
 
 
-# ─── DELETE TASK ───────────────────────────────────────────────
+# Delete task
 @router.delete("/{task_id}")
 def delete_task(
     team_id: int,

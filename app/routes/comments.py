@@ -15,7 +15,7 @@ router = APIRouter(
 )
 
 
-# ─── ADD COMMENT ───────────────────────────────────────────────
+# Add comment
 @router.post("/", response_model=CommentResponse, status_code=201)
 def add_comment(
     team_id: int,
@@ -41,7 +41,7 @@ def add_comment(
     return comment
 
 
-# ─── GET COMMENTS ON A TASK ────────────────────────────────────
+# Get comments on a task
 @router.get("/", response_model=list[CommentResponse])
 def get_comments(
     team_id: int,
